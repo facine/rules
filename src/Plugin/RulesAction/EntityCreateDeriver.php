@@ -85,7 +85,7 @@ class EntityCreateDeriver extends DeriverBase implements ContainerDeriverInterfa
       $base_field_definitions = $this->entityFieldManager->getBaseFieldDefinitions($entity_type_id);
       foreach ($base_field_definitions as $field_name => $definition) {
         if ($field_name != $bundle_key && !$definition->isRequired()) {
-          continue;
+          continue 2;
         }
 
         $item_definition = $definition->getItemDefinition();
